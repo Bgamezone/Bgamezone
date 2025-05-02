@@ -1,99 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BGameZone</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Hub</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #1a1a2e;
-      color: #ffffff;
+    body { font-family: Arial, sans-serif; margin: 0; background: #111; color: #fff; }
+    header { background: #222; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+    nav a { color: white; text-decoration: none; margin: 0 10px; }
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 250px;
+      max-height: 400px;
+      overflow-y: auto;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
     }
-
-    header {
-      text-align: center;
-      background-color: #0f3460;
-      padding: 20px;
+    .dropdown-content a {
+      color: white;
+      padding: 8px 12px;
+      text-decoration: none;
+      display: block;
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      color: #ddd;
-      font-size: 1.2rem;
-    }
-
-    .games {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 40px;
-      gap: 30px;
-    }
-
-    .game {
-      background-color: #16213e;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      width: 250px;
-      transition: transform 0.2s;
-    }
-
-    .game:hover {
-      transform: scale(1.05);
-    }
-
-    .game iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .game h2 {
-      font-size: 1.2rem;
-      margin: 10px 0;
-    }
-
-    footer {
-      background-color: #0f3460;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
+    .dropdown:hover .dropdown-content { display: block; }
+    .main { padding: 20px; text-align: center; }
+    iframe { width: 100%; height: 600px; border: none; margin-top: 20px; }
   </style>
 </head>
 <body>
   <header>
-    <h1>🎮 BGameZone 🎮</h1>
-    <p>Play awesome games online — free and fun!</p>
+    <h1>Game Hub</h1>
+    <nav>
+      <div class="dropdown">
+        <a href="#">Games</a>
+        <div class="dropdown-content">
+          <a href="#2048">2048</a>
+          <a href="#tetris">Tetris</a>
+          <a href="#dino">Dino Game</a>
+          <a href="#flappy">Flappy Bird</a>
+          <a href="#snake">Snake</a>
+          <a href="#slope">Slope</a>
+          <a href="#minecraft">Minecraft Classic</a>
+          <a href="#shellshockers">Shell Shockers</a>
+          <a href="#drifthunters">Drift Hunters</a>
+          <a href="#retrobowl">Retro Bowl</a>
+          <a href="#motox3m">Moto X3M</a>
+          <a href="#fireboy">Fireboy & Watergirl</a>
+          <a href="#run3">Run 3</a>
+          <a href="#happywheels">Happy Wheels</a>
+          <a href="#bitlife">BitLife</a>
+          <a href="#paperio2">Paper.io 2</a>
+          <a href="#amongus">Among Us</a>
+          <a href="#zombsroyale">Zombs Royale</a>
+          <a href="#1v1lol">1v1.LOL</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">Apps</a>
+        <div class="dropdown-content">
+          <a href="apps/youtube.html">YouTube</a>
+          <a href="apps/google.html">Google</a>
+          <a href="apps/google-docs.html">Google Docs</a>
+          <a href="apps/google-drive.html">Google Drive</a>
+          <a href="apps/classroom.html">Google Classroom</a>
+          <a href="apps/gmail.html">Gmail</a>
+          <a href="apps/tiktok.html">TikTok</a>
+          <a href="apps/discord.html">Discord</a>
+          <a href="apps/replit.html">Replit</a>
+          <a href="apps/codepen.html">CodePen</a>
+          <a href="apps/browser.html">Private Browser</a>
+        </div>
+      </div>
+    </nav>
   </header>
+  <div class="main">
+    <h2>Welcome to Game Hub</h2>
+    <p>Select a game from the dropdown above to get started!</p>
 
-  <main class="games">
-    <div class="game">
-      <iframe src="https://tetris.com/play-tetris"></iframe>
-      <h2>Tetris</h2>
-    </div>
-    <div class="game">
-      <iframe src="https://play2048.co/"></iframe>
-      <h2>2048</h2>
-    </div>
-    <div class="game">
-      <iframe src="https://playsnake.org/"></iframe>
-      <h2>Snake</h2>
-    </div>
-  </main>
+    <!-- Embedding games from your website -->
+    <h3 id="2048">2048</h3>
+    <iframe src="games/2048/index.html"></iframe>
 
-  <footer>
-    <p>&copy; 2025 BGameZone. All rights reserved.</p>
-  </footer>
+    <h3 id="tetris">Tetris</h3>
+    <iframe src="games/tetris/index.html"></iframe>
+
+    <h3 id="dino">Dino Game</h3>
+    <iframe src="games/dino/index.html"></iframe>
+
+    <h3 id="flappy">Flappy Bird</h3>
+    <iframe src="games/flappybird/index.html"></iframe>
+
+    <h3 id="snake">Snake</h3>
+    <iframe src="games/snake/index.html"></iframe>
+
+    <h3 id="slope">Slope</h3>
+    <iframe src="games/slope/index.html"></iframe>
+
+    <h3 id="minecraft">Minecraft Classic</h3>
+    <iframe src="games/minecraft/index.html"></iframe>
+
+    <h3 id="shellshockers">Shell Shockers</h3>
+    <iframe src="games/shellshockers/index.html"></iframe>
+
+    <h3 id="drifthunters">Drift Hunters</h3>
+    <iframe src="games/drifthunters/index.html"></iframe>
+
+    <h3 id="retrobowl">Retro Bowl</h3>
+    <iframe src="games/retrobowl/index.html"></iframe>
+
+    <h3 id="motox3m">Moto X3M</h3>
+    <iframe src="games/motox3m/index.html"></iframe>
+
+    <h3 id="fireboy">Fireboy & Watergirl</h3>
+    <iframe src="games/fireboywatergirl/index.html"></iframe>
+
+    <h3 id="run3">Run 3</h3>
+    <iframe src="games/run3/index.html"></iframe>
+
+    <h3 id="happywheels">Happy Wheels</h3>
+    <iframe src="games/happywheels/index.html"></iframe>
+
+    <h3 id="bitlife">BitLife</h3>
+    <iframe src="games/bitlife/index.html"></iframe>
+
+    <h3 id="paperio2">Paper.io 2</h3>
+    <iframe src="games/paperio2/index.html"></iframe>
+
+    <h3 id="amongus">Among Us</h3>
+    <iframe src="games/amongus/index.html"></iframe>
+
+    <h3 id="zombsroyale">Zombs Royale</h3>
+    <iframe src="games/zombsroyale/index.html"></iframe>
+
+    <h3 id="1v1lol">1v1.LOL</h3>
+    <iframe src="games/1v1lol/index.html"></iframe>
+  </div>
 </body>
 </html>
